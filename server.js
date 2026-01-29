@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api/auth', require('./auth'));
+app.use('/api/auth', require('./routes/auth'));
 app.use('/api/groups', require('./groups'));
 app.use('/api/students', require('./students'));
 app.use('/api/payments', require('./payments'));
