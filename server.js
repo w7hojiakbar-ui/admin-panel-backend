@@ -20,12 +20,12 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/groups', require('./routes/groups'));
-app.use('/api/students', require('./routes/students'));
-app.use('/api/payments', require('./routes/payments'));
-app.use('/api/expenses', require('./routes/expenses'));
-app.use('/api/dashboard', require('./routes/dashboard'));
+app.use('/api/auth', require('./auth'));
+app.use('/api/groups', require('./groups'));
+app.use('/api/students', require('./students'));
+app.use('/api/payments', require('./payments'));
+app.use('/api/expenses', require('./expenses'));
+app.use('/api/dashboard', require('./dashboard'));
 
 // Health check route
 app.get('/api/health', (req, res) => {
@@ -55,7 +55,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`
   ╔═══════════════════════════════════════════╗
   ║   🚀 Admin Panel API Server Started      ║
